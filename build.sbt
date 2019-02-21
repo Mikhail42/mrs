@@ -9,10 +9,13 @@ val mysqlVersion = "5.1.38"
 val typesafeVersion = "1.3.3"
 val slickVersion = "3.2.3"
 
-libraryDependencies ++= Seq(
-  "io.getquill" %% "quill" % quilVersion,
+val quilDeps = Seq("io.getquill" %% "quill" % quilVersion,
   "io.getquill" %% "quill-core" % quilVersion,
-  "io.getquill" %% "quill-jdbc" % quilVersion,
+  "io.getquill" %% "quill-jdbc" % quilVersion)
+libraryDependencies ++= quilDeps
+
+libraryDependencies ++= Seq(
+  "org.scalaxb" %% "scalaxb" % "1.7.0",
   "mysql" % "mysql-connector-java" % mysqlVersion,
   "com.typesafe" % "config" % typesafeVersion,
   "com.typesafe.slick" %% "slick-codegen" % slickVersion
